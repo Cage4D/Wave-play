@@ -5,3 +5,8 @@ import { useState } from 'react';
 import { Menu } from 'lucide-react';
 
 
+export function Layout() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  
+}
