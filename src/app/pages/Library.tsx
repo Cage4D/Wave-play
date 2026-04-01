@@ -13,7 +13,12 @@ export function Library() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mb-6 md:mb-8">
         <div className="bg-zinc-900/40 rounded-lg p-4 md:p-6 border border-zinc-800">
           <div className="flex items-center gap-3">
-            
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
+              <Music className="w-5 h-5 md:w-6 md:h-6 text-purple-500" />
+            </div>
+            <div>
+              
+            </div>
           </div>
         </div>
       </div>
