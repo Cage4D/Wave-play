@@ -27,7 +27,18 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
         `}
       >
-        
+        <div className="p-6 flex items-center justify-between">
+          <h1 className="text-2xl text-white">
+            Wave<span className="text-purple-500">Play</span>
+          </h1>
+          <button
+            onClick={onClose}
+            className="lg:hidden text-zinc-400 hover:text-white"
+            aria-label="Close menu"
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
       </div>
     </>
   );
