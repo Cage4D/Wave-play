@@ -27,6 +27,9 @@ export function Layout() {
           isOpen={isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}
         />
+        <main className="flex-1 overflow-y-auto pb-32 lg:pb-28">
+          <Outlet />
+        </main>
       </div>
     </div>
   );
