@@ -17,7 +17,8 @@ export function Library() {
               <Music className="w-5 h-5 md:w-6 md:h-6 text-purple-500" />
             </div>
             <div>
-              
+              <p className="text-xl md:text-2xl text-white">{tracks.length}</p>
+              <p className="text-xs md:text-sm text-zinc-400">Total Tracks</p>
             </div>
           </div>
         </div>
