@@ -16,6 +16,19 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           onClick={onClose}
         />
       )}
+
+      <div
+        className={`
+          fixed lg:relative
+          inset-y-0 left-0
+          w-64 bg-zinc-950 h-full flex flex-col border-r border-zinc-800
+          z-50
+          transform transition-transform duration-300 ease-in-out
+          ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+        `}
+      >
+        
+      </div>
     </>
   );
 }
