@@ -72,4 +72,16 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       audio.pause();
     }
   }, [isPlaying]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio || !currentTrack) return;
+    audio.src = currentTrack.audioUrl;
+    audio.currentTime = 0;
+    setCurrentTime(0);
+    setDuration(0);
+    if (isPlaying) {
+      audio.play().catch(() => setIsPlayingState(false));
+    }
+  }, [currentTrack?.id]);
 }
