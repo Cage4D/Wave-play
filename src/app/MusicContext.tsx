@@ -16,3 +16,5 @@ interface MusicContextType {
   setVolume: (volume: number) => void;
   volume: number;
 }
+
+const MusicContext = createContext<MusicContextType | undefined>(undefined);
