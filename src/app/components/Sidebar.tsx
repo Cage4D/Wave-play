@@ -103,7 +103,9 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
             </NavLink>
           </div>
         </nav>
-
+        <div className="p-4 border-t border-zinc-800">
+          <p className="text-xs text-zinc-500">© 2026 WavePlay</p>
+        </div>
       </div>
     </>
   );
