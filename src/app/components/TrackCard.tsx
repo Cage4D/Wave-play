@@ -29,7 +29,15 @@ export function TrackCard({ track, isPlaying, isCurrentTrack, isLiked, onPlay, o
       className="group relative bg-zinc-900/40 hover:bg-zinc-800/60 rounded-lg p-3 md:p-4 transition-all cursor-pointer"
       onClick={onPlay}
     >
-      
+
+      <div className="relative aspect-square mb-3 md:mb-4 rounded-md overflow-hidden shadow-lg">
+        <ImageWithFallback
+          src={track.coverUrl}
+          alt={track.album}
+          className="w-full h-full object-cover transition-transform group-hover:scale-105"
+        />
+        
+      </div>
     </div>
   );
 }
