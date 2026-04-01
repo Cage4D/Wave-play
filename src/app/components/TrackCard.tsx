@@ -19,4 +19,10 @@ export function TrackCard({ track, isPlaying, isCurrentTrack, isLiked, onPlay, o
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
+  const handleLikeClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onLike();
+  };
+
+  
 }
