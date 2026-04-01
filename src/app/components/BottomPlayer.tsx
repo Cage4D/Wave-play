@@ -159,6 +159,14 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
                 <Volume2 className="w-4 h-4" />
               )}
             </button>
+            <MusicSlider
+              variant="volume"
+              value={[isMuted ? 0 : volume * 100]}
+              max={100}
+              step={1}
+              onValueChange={handleVolumeChange}
+              className="flex-1"
+            />
           </div>
         </div>
       </div>
