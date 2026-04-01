@@ -49,6 +49,16 @@ export function TrackCard({ track, isPlaying, isCurrentTrack, isLiked, onPlay, o
             )}
           </button>
         </div>
+
+        <button
+          onClick={handleLikeClick}
+          className="absolute top-2 right-2 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-zinc-900/80 hover:bg-zinc-800 opacity-0 group-hover:opacity-100 transition-all"
+          aria-label={isLiked ? 'Unlike' : 'Like'}
+        >
+          <Heart
+            className={`w-3.5 h-3.5 md:w-4 md:h-4 ${isLiked ? 'fill-purple-500 text-purple-500' : 'text-white'}`}
+          />
+        </button>
       </div>
     </div>
   );
