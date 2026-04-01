@@ -109,4 +109,16 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const setVolume = (vol: number) => {
     setVolumeState(vol);
   };
+
+  const toggleLike = (trackId: string) => {
+    setLikedSongs((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(trackId)) {
+        newSet.delete(trackId);
+      } else {
+        newSet.add(trackId);
+      }
+      return newSet;
+    });
+  };
 }
