@@ -71,4 +71,6 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
+
+  if (!currentTrack) return null;
 }
