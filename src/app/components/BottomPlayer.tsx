@@ -105,7 +105,7 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
             </div>
             <button
               onClick={() => toggleLike(currentTrack.id)}
-              className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full hover:bg-zinc-800 transition-colors flex-shrink-0"
+              className="flex w-8 h-8 items-center justify-center rounded-full hover:bg-zinc-800 transition-colors flex-shrink-0"
               aria-label={trackIsLiked ? 'Unlike' : 'Like'}
             >
               <Heart
