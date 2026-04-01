@@ -52,7 +52,9 @@ export function TrackCard({ track, isPlaying, isCurrentTrack, isLiked, onPlay, o
 
         <button
           onClick={handleLikeClick}
-          className="absolute top-2 right-2 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-zinc-900/80 hover:bg-zinc-800 opacity-0 group-hover:opacity-100 transition-all"
+          className={`absolute top-2 right-2 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-zinc-900/80 hover:bg-zinc-800 transition-all
+            ${isLiked ? 'opacity-100' : 'opacity-0 group-hover:opacity-100 [@media(hover:none)]:opacity-100'}
+          `}
           aria-label={isLiked ? 'Unlike' : 'Like'}
         >
           <Heart
