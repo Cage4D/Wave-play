@@ -70,6 +70,17 @@ export function TrackCard({ track, isPlaying, isCurrentTrack, isLiked, onPlay, o
           </div>
         )}
       </div>
+
+      <div className="space-y-1">
+        <h3 className="text-sm md:text-base text-white truncate group-hover:text-purple-400 transition-colors">
+          {track.title}
+        </h3>
+        <p className="text-xs md:text-sm text-zinc-400 truncate">{track.artist}</p>
+        <div className="flex items-center justify-between">
+          <span className="text-[10px] md:text-xs text-zinc-500">{track.genre}</span>
+          <span className="text-[10px] md:text-xs text-zinc-500">{formatDuration(track.duration)}</span>
+        </div>
+      </div>
     </div>
   );
 }
