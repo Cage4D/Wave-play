@@ -57,6 +57,22 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
               <span>Home</span>
             </NavLink>
 
+            <NavLink
+              to="/browse"
+              onClick={onClose}
+              className={({ isActive }) =>
+                `w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                  isActive
+                    ? 'bg-zinc-800/50 text-white'
+                    : 'hover:bg-zinc-800/50 text-zinc-400 hover:text-white'
+                }`
+              }
+            >
+              <ListMusic className="w-5 h-5" />
+              <span>Browse</span>
+            </NavLink>
+
+            
             
           </div>
         </nav>
