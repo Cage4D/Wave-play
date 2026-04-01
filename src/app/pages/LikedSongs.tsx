@@ -20,7 +20,19 @@ export function LikedSongs() {
           </div>
         </div>
       </div>
-
+      {likedTracks.length === 0 ? (
+        <div className="flex flex-col items-center justify-center py-12 md:py-20">
+          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-zinc-900/40 flex items-center justify-center mb-4">
+            <Heart className="w-8 h-8 md:w-10 md:h-10 text-zinc-600" />
+          </div>
+          <h3 className="text-lg md:text-xl text-white mb-2">No liked songs yet</h3>
+          <p className="text-sm md:text-base text-zinc-400 text-center max-w-md px-4">
+            Songs you like will appear here. Click the heart icon on any track to add it to your collection.
+          </p>
+        </div>
+      ) : (
+        <TrackGrid tracks={likedTracks} />
+      )}
     </div>
   );
 }
