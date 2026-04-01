@@ -16,7 +16,7 @@ export function LikedSongs() {
           </div>
           <div>
             <h2 className="text-2xl md:text-3xl text-white mb-1">Liked Songs</h2>
-            
+            <p className="text-sm md:text-base text-zinc-400">{likedTracks.length} songs</p>
           </div>
         </div>
       </div>
