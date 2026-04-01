@@ -73,4 +73,7 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
   };
 
   if (!currentTrack) return null;
+
+  const trackIsLiked = isLiked(currentTrack.id);
+  const trackDuration = duration || currentTrack.duration;
 }
