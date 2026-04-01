@@ -26,7 +26,12 @@ export function MusicSlider({
           variant === 'progress' && "group-hover:h-1.5 transition-all duration-200",
         )}
       >
-        
+        <SliderPrimitive.Range
+          className={cn(
+            "absolute h-full bg-gradient-to-r from-white to-zinc-200",
+            variant === 'volume' && "from-zinc-300 to-zinc-400",
+          )}
+        />
       </SliderPrimitive.Track>
     </SliderPrimitive.Root>
   );
