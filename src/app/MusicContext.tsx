@@ -121,4 +121,6 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       return newSet;
     });
   };
+
+  const isLiked = (trackId: string) => likedSongs.has(trackId);
 }
