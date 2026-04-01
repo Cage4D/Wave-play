@@ -48,4 +48,10 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
     seek(value[0]);
   };
 
+  const handleVolumeChange = (value: number[]) => {
+    const newVol = value[0] / 100;
+    setVolume(newVol);
+    if (newVol > 0) setIsMuted(false);
+  };
+
 }
