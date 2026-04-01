@@ -90,4 +90,23 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       audioRef.current.volume = volume;
     }
   }, [volume]);
+
+  const setCurrentTrack = (track: Track | null) => {
+    setCurrentTrackState(track);
+  };
+
+  const setIsPlaying = (playing: boolean) => {
+    setIsPlayingState(playing);
+  };
+
+  const seek = (time: number) => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = time;
+      setCurrentTime(time);
+    }
+  };
+
+  const setVolume = (vol: number) => {
+    setVolumeState(vol);
+  };
 }
