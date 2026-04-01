@@ -33,6 +33,15 @@ export function MusicSlider({
           )}
         />
       </SliderPrimitive.Track>
+      <SliderPrimitive.Thumb
+        className={cn(
+          "block h-3 w-3 rounded-full bg-white shadow-lg ring-0 transition-all",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900",
+          "disabled:pointer-events-none disabled:opacity-50",
+          variant === 'progress' && "opacity-0 group-hover:opacity-100 group-hover:h-4 group-hover:w-4",
+          variant === 'volume' && "h-3 w-3",
+        )}
+      />
     </SliderPrimitive.Root>
   );
 }
