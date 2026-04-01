@@ -31,6 +31,7 @@ export function Layout() {
           <Outlet />
         </main>
       </div>
+      <BottomPlayer onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} />
     </div>
   );
 }
