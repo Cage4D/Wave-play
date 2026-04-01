@@ -62,4 +62,14 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       audio.pause();
     };
   }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (isPlaying) {
+      audio.play().catch(() => setIsPlayingState(false));
+    } else {
+      audio.pause();
+    }
+  }, [isPlaying]);
 }
