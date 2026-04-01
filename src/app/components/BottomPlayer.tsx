@@ -36,4 +36,12 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
     setIsPlaying(true);
   };
 
+  const onPrevious = () => {
+    if (!currentTrack) return;
+    const currentIndex = tracks.findIndex((t) => t.id === currentTrack.id);
+    const previousIndex = currentIndex === 0 ? tracks.length - 1 : currentIndex - 1;
+    setCurrentTrack(tracks[previousIndex]);
+    setIsPlaying(true);
+  };
+
 }
