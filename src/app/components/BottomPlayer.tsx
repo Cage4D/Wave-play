@@ -76,4 +76,21 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
 
   const trackIsLiked = isLiked(currentTrack.id);
   const trackDuration = duration || currentTrack.duration;
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 bg-zinc-900 border-t border-zinc-800 backdrop-blur-xl bg-opacity-95 z-50">
+      <div className="px-3 md:px-4 py-2 md:py-3">
+        <div className="mb-2">
+          <MusicSlider
+            variant="progress"
+            value={[currentTime]}
+            max={trackDuration}
+            step={1}
+            onValueChange={handleProgressChange}
+            className="w-full"
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
