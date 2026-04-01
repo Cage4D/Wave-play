@@ -24,5 +24,12 @@ export function TrackCard({ track, isPlaying, isCurrentTrack, isLiked, onPlay, o
     onLike();
   };
 
-  
+  return (
+    <div
+      className="group relative bg-zinc-900/40 hover:bg-zinc-800/60 rounded-lg p-3 md:p-4 transition-all cursor-pointer"
+      onClick={onPlay}
+    >
+      
+    </div>
+  );
 }
