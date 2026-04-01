@@ -1,9 +1,8 @@
-import { Outlet } from 'react-router';
-import { Sidebar } from './Sidebar';
-import { BottomPlayer } from './BottomPlayer';
-import { useState } from 'react';
-import { Menu } from 'lucide-react';
-
+import { Outlet } from "react-router";
+import { Sidebar } from "./Sidebar";
+import { BottomPlayer } from "./BottomPlayer";
+import { useState } from "react";
+import { Menu } from "lucide-react";
 
 export function Layout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -23,9 +22,12 @@ export function Layout() {
         </h1>
         <div className="w-8" />
       </div>
-
-      
+      <div className="flex-1 flex overflow-hidden">
+        <Sidebar
+          isOpen={isSidebarOpen}
+          onClose={() => setIsSidebarOpen(false)}
+        />
+      </div>
     </div>
   );
-  
 }
