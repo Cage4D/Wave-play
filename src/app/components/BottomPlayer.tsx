@@ -113,6 +113,19 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
               />
             </button>
           </div>
+          <div className="flex items-center gap-1 md:gap-2 flex-shrink-0">
+            <span className="hidden sm:inline text-xs text-zinc-400 w-10 text-right">
+              {formatTime(currentTime)}
+            </span>
+            <button
+              onClick={onPrevious}
+              className="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full hover:bg-zinc-800 transition-colors text-zinc-400 hover:text-white"
+              aria-label="Previous track"
+            >
+              <SkipBack className="w-3.5 h-3.5 md:w-4 md:h-4" />
+            </button>
+          </div>
+
           
 
           
