@@ -90,6 +90,27 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
             className="w-full"
           />
         </div>
+        <div className="flex items-center justify-between gap-2 md:gap-4">
+          <div className="flex items-center gap-2 md:gap-3 flex-1 min-w-0">
+            <div className="w-10 h-10 md:w-14 md:h-14 rounded-md overflow-hidden flex-shrink-0 shadow-lg">
+              <ImageWithFallback
+                src={currentTrack.coverUrl}
+                alt={currentTrack.album}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-xs md:text-sm text-white truncate">{currentTrack.title}</p>
+              <p className="text-[10px] md:text-xs text-zinc-400 truncate">{currentTrack.artist}</p>
+            </div>
+          </div>
+          
+
+          
+          
+          
+          
+        </div>
       </div>
     </div>
   );
