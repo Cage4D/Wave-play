@@ -54,4 +54,15 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
     if (newVol > 0) setIsMuted(false);
   };
 
+  const toggleMute = () => {
+    if (isMuted) {
+      setVolume(volumeBeforeMute);
+      setIsMuted(false);
+    } else {
+      setVolumeBeforeMute(volume);
+      setVolume(0);
+      setIsMuted(true);
+    }
+  };
+
 }
