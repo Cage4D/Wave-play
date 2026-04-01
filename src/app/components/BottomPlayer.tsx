@@ -44,4 +44,8 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
     setIsPlaying(true);
   };
 
+  const handleProgressChange = (value: number[]) => {
+    seek(value[0]);
+  };
+
 }
