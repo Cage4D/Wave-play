@@ -36,7 +36,19 @@ export function TrackCard({ track, isPlaying, isCurrentTrack, isLiked, onPlay, o
           alt={track.album}
           className="w-full h-full object-cover transition-transform group-hover:scale-105"
         />
-        
+
+        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <button
+            className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-purple-500 hover:bg-purple-600 text-white transform scale-90 group-hover:scale-100 transition-transform shadow-lg"
+            aria-label={isCurrentTrack && isPlaying ? 'Pause' : 'Play'}
+          >
+            {isCurrentTrack && isPlaying ? (
+              <Pause className="w-4 h-4 md:w-5 md:h-5 fill-white" />
+            ) : (
+              <Play className="w-4 h-4 md:w-5 md:h-5 fill-white ml-0.5" />
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );
