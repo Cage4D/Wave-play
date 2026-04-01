@@ -1,5 +1,12 @@
-import React, { createContext, useContext, useState, useRef, useEffect, ReactNode } from 'react';
-import { Track } from './data/tracks';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useRef,
+  useEffect,
+  ReactNode,
+} from "react";
+import { Track } from "./data/tracks";
 
 interface MusicContextType {
   currentTrack: Track | null;
@@ -25,9 +32,34 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolumeState] = useState(0.7);
-  
+
   const [likedSongs, setLikedSongs] = useState<Set<string>>(new Set());
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   
+  useEffect(() => {
+    const audio = new Audio();
+    audio.volume = 0.7;
+    audioRef.current = audio;
+
+    const handleTimeUpdate = () => setCurrentTime(audio.currentTime);
+
+    const handleLoadedMetadata = () => setDuration(audio.duration);
+
+    const handleEnded = () => {
+      setIsPlayingState(false);
+      setCurrentTime(0);
+    };
+
+    audio.addEventListener("timeupdate", handleTimeUpdate);
+    audio.addEventListener("loadedmetadata", handleLoadedMetadata);
+    audio.addEventListener("ended", handleEnded);
+
+    return () => {
+      audio.removeEventListener("timeupdate", handleTimeUpdate);
+      audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      audio.removeEventListener("ended", handleEnded);
+      audio.pause();
+    };
+  }, []);
 }
