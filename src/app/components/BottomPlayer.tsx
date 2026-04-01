@@ -27,4 +27,13 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
   const [isMuted, setIsMuted] = useState(false);
   const [volumeBeforeMute, setVolumeBeforeMute] = useState(0.7);
 
+  
+  const onNext = () => {
+    if (!currentTrack) return;
+    const currentIndex = tracks.findIndex((t) => t.id === currentTrack.id);
+    const nextIndex = (currentIndex + 1) % tracks.length;
+    setCurrentTrack(tracks[nextIndex]);
+    setIsPlaying(true);
+  };
+
 }
