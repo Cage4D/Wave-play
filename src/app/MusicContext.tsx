@@ -155,3 +155,11 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     </MusicContext.Provider>
   );
 }
+
+export function useMusicContext() {
+  const context = useContext(MusicContext);
+  if (!context) {
+    throw new Error('useMusicContext must be used within MusicProvider');
+  }
+  return context;
+}
