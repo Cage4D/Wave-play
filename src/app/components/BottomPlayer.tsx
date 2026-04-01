@@ -147,13 +147,19 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
               {formatTime(trackDuration)}
             </span>
           </div>
-
-          
-
-          
-          
-          
-          
+          <div className="hidden lg:flex items-center gap-2 w-32 flex-shrink-0">
+            <button
+              onClick={toggleMute}
+              className="text-zinc-400 hover:text-white transition-colors"
+              aria-label={isMuted ? 'Unmute' : 'Mute'}
+            >
+              {isMuted || volume === 0 ? (
+                <VolumeX className="w-4 h-4" />
+              ) : (
+                <Volume2 className="w-4 h-4" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </div>
