@@ -59,6 +59,16 @@ export function TrackCard({ track, isPlaying, isCurrentTrack, isLiked, onPlay, o
             className={`w-3.5 h-3.5 md:w-4 md:h-4 ${isLiked ? 'fill-purple-500 text-purple-500' : 'text-white'}`}
           />
         </button>
+
+        {isCurrentTrack && (
+          <div className="absolute bottom-2 right-2">
+            <div className="flex gap-0.5">
+              <div className={`w-0.5 h-2.5 md:h-3 bg-purple-500 rounded-full ${isPlaying ? 'animate-pulse' : ''}`} />
+              <div className={`w-0.5 h-3.5 md:h-4 bg-purple-500 rounded-full ${isPlaying ? 'animate-pulse' : ''}`} style={{ animationDelay: '0.2s' }} />
+              <div className={`w-0.5 h-2.5 md:h-3 bg-purple-500 rounded-full ${isPlaying ? 'animate-pulse' : ''}`} style={{ animationDelay: '0.4s' }} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
