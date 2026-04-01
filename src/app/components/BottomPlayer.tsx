@@ -4,3 +4,7 @@ import { MusicSlider } from './MusicSlider';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useMusicContext } from '../MusicContext';
 import { tracks } from '../data/tracks';
+
+interface BottomPlayerProps {
+  onMenuClick: () => void;
+}
