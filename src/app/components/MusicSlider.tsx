@@ -20,7 +20,14 @@ export function MusicSlider({
       )}
       {...props}
     >
-      
+      <SliderPrimitive.Track
+        className={cn(
+          "relative h-1 w-full grow overflow-hidden rounded-full bg-zinc-700",
+          variant === 'progress' && "group-hover:h-1.5 transition-all duration-200",
+        )}
+      >
+        
+      </SliderPrimitive.Track>
     </SliderPrimitive.Root>
   );
 }
