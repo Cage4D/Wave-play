@@ -103,6 +103,15 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
               <p className="text-xs md:text-sm text-white truncate">{currentTrack.title}</p>
               <p className="text-[10px] md:text-xs text-zinc-400 truncate">{currentTrack.artist}</p>
             </div>
+            <button
+              onClick={() => toggleLike(currentTrack.id)}
+              className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full hover:bg-zinc-800 transition-colors flex-shrink-0"
+              aria-label={trackIsLiked ? 'Unlike' : 'Like'}
+            >
+              <Heart
+                className={`w-4 h-4 ${trackIsLiked ? 'fill-purple-500 text-purple-500' : 'text-zinc-400 hover:text-white'}`}
+              />
+            </button>
           </div>
           
 
