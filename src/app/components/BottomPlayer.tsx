@@ -124,6 +124,28 @@ export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
             >
               <SkipBack className="w-3.5 h-3.5 md:w-4 md:h-4" />
             </button>
+            <button
+              onClick={() => setIsPlaying(!isPlaying)}
+              className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white hover:bg-zinc-200 transition-all transform hover:scale-105"
+              aria-label={isPlaying ? 'Pause' : 'Play'}
+            >
+              {isPlaying ? (
+                <Pause className="w-4 h-4 md:w-5 md:h-5 text-zinc-900 fill-zinc-900" />
+              ) : (
+                <Play className="w-4 h-4 md:w-5 md:h-5 text-zinc-900 fill-zinc-900 ml-0.5" />
+              )}
+            </button>
+
+            <button
+              onClick={onNext}
+              className="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full hover:bg-zinc-800 transition-colors text-zinc-400 hover:text-white"
+              aria-label="Next track"
+            >
+              <SkipForward className="w-3.5 h-3.5 md:w-4 md:h-4" />
+            </button>
+            <span className="hidden sm:inline text-xs text-zinc-400 w-10">
+              {formatTime(trackDuration)}
+            </span>
           </div>
 
           
