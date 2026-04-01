@@ -84,4 +84,10 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       audio.play().catch(() => setIsPlayingState(false));
     }
   }, [currentTrack?.id]);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+    }
+  }, [volume]);
 }
