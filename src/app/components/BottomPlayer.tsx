@@ -8,3 +8,23 @@ import { tracks } from '../data/tracks';
 interface BottomPlayerProps {
   onMenuClick: () => void;
 }
+
+export function BottomPlayer({ onMenuClick: _onMenuClick }: BottomPlayerProps) {
+  const {
+    currentTrack,
+    isPlaying,
+    setIsPlaying,
+    setCurrentTrack,
+    isLiked,
+    toggleLike,
+    currentTime,
+    duration,
+    seek,
+    volume,
+    setVolume,
+  } = useMusicContext();
+
+  const [isMuted, setIsMuted] = useState(false);
+  const [volumeBeforeMute, setVolumeBeforeMute] = useState(0.7);
+
+}
