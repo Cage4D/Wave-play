@@ -123,7 +123,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   };
 
   const isLiked = (trackId: string) => likedSongs.has(trackId);
-  
+
   const playTrack = (track: Track) => {
     if (currentTrack?.id === track.id) {
       setIsPlayingState(!isPlaying);
@@ -132,4 +132,26 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       setIsPlayingState(true);
     }
   };
+
+  return (
+    <MusicContext.Provider
+      value={{
+        currentTrack,
+        isPlaying,
+        currentTime,
+        duration,
+        likedSongs,
+        volume,
+        setCurrentTrack,
+        setIsPlaying,
+        toggleLike,
+        isLiked,
+        playTrack,
+        seek,
+        setVolume,
+      }}
+    >
+      {children}
+    </MusicContext.Provider>
+  );
 }
