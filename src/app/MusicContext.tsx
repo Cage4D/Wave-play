@@ -123,4 +123,13 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   };
 
   const isLiked = (trackId: string) => likedSongs.has(trackId);
+  
+  const playTrack = (track: Track) => {
+    if (currentTrack?.id === track.id) {
+      setIsPlayingState(!isPlaying);
+    } else {
+      setCurrentTrackState(track);
+      setIsPlayingState(true);
+    }
+  };
 }
