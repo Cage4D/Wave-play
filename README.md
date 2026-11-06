@@ -10,6 +10,7 @@ A sleek, responsive music streaming web application built with React, TypeScript
 - **Beautiful Album Grid** - Responsive card layout that adapts from 2 to 5 columns
 - **Bottom Fixed Player** - Persistent music player that stays visible while browsing
 - **Custom Sliders** - Spotify/YouTube Music-style sliders with smooth hover effects
+- **Auto-Play Next** - Automatically advances to the next track when a song ends, wrapping back to the first
 - **Volume Control** - Adjustable volume with mute functionality
 - **Browse by Genre** - Organized view of tracks grouped by music genre
 - **Visual Feedback** - Animated visualizer bars on currently playing tracks
@@ -140,7 +141,8 @@ The app uses Tailwind's zinc color palette with purple accents. To customize:
 4. **Like Songs**: Click the heart icon on tracks or in the player to save favorites
 5. **Control Playback**: Use the bottom player for play/pause, skip, and volume
 6. **Seek**: Hover over the progress bar and drag to jump to any point
-7. **Browse by Genre**: Visit the Browse page to explore tracks organized by genre
+7. **Auto-Advance**: When a song ends, the next one starts automatically
+8. **Browse by Genre**: Visit the Browse page to explore tracks organized by genre
 
 ## 📱 Responsive Design
 

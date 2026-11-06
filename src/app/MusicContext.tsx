@@ -6,7 +6,7 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
-import { Track } from "./data/tracks";
+import { Track, tracks } from "./data/tracks";
 
 interface MusicContextType {
   currentTrack: Track | null;
@@ -46,9 +46,21 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
     const handleLoadedMetadata = () => setDuration(audio.duration);
 
+    // Auto-advance: move to the next track (wrapping to the first) and keep
+    // playing. The effect keyed on the track id loads and starts it.
     const handleEnded = () => {
-      setIsPlayingState(false);
       setCurrentTime(0);
+      setCurrentTrackState((prev) => {
+        if (!prev || tracks.length === 0) return prev;
+        const i = tracks.findIndex((t) => t.id === prev.id);
+        const next = tracks[(i + 1) % tracks.length];
+        // Same id (single-track list) won't re-trigger the load effect, so replay here.
+        if (next.id === prev.id) {
+          audio.currentTime = 0;
+          audio.play().catch(() => setIsPlayingState(false));
+        }
+        return next;
+      });
     };
 
     audio.addEventListener("timeupdate", handleTimeUpdate);
