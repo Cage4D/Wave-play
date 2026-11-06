@@ -10,7 +10,6 @@ A sleek, responsive music streaming web application built with React, TypeScript
 - **Beautiful Album Grid** - Responsive card layout that adapts from 2 to 5 columns
 - **Bottom Fixed Player** - Persistent music player that stays visible while browsing
 - **Custom Sliders** - Spotify/YouTube Music-style sliders with smooth hover effects
-- **Auto-Play Next** - Automatically advances to the next track when a song ends
 - **Volume Control** - Adjustable volume with mute functionality
 - **Browse by Genre** - Organized view of tracks grouped by music genre
 - **Visual Feedback** - Animated visualizer bars on currently playing tracks
@@ -30,10 +29,10 @@ A sleek, responsive music streaming web application built with React, TypeScript
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/cage4D/Wave-play.git
 
 # Navigate to project directory
-cd waveplay
+cd Wave-play
 
 # Install dependencies
 npm install
@@ -107,7 +106,7 @@ This project prioritizes **polish and attention to detail**. Every interaction h
 
 ### Adding New Tracks
 
-Edit `/src/app/data/tracks.ts`:
+Put the audio file in `public/audio/`, then add an entry to `/src/app/data/tracks.ts`:
 
 ```typescript
 export const tracks: Track[] = [
@@ -117,6 +116,7 @@ export const tracks: Track[] = [
     artist: 'Artist Name',
     album: 'Album Name',
     coverUrl: 'https://your-image-url.com/cover.jpg',
+    audioUrl: '/audio/your-song.mp3',
     duration: 240, // seconds
     genre: 'Genre',
   },
@@ -140,8 +140,7 @@ The app uses Tailwind's zinc color palette with purple accents. To customize:
 4. **Like Songs**: Click the heart icon on tracks or in the player to save favorites
 5. **Control Playback**: Use the bottom player for play/pause, skip, and volume
 6. **Seek**: Hover over the progress bar and drag to jump to any point
-7. **Auto-Advance**: Tracks automatically proceed to the next song
-8. **Browse by Genre**: Visit the Browse page to explore tracks organized by genre
+7. **Browse by Genre**: Visit the Browse page to explore tracks organized by genre
 
 ## 📱 Responsive Design
 
@@ -169,6 +168,6 @@ This project is open source and available under the MIT License.
 
 ---
 
-**Note**: This is a UI demonstration project. No actual audio playback is implemented - it's purely a visual and interaction design showcase. The player simulates playback with timers and state management.
+**Note**: Playback is real. Each track points at an mp3 in `public/audio/`, played through a single HTML5 `Audio` element shared via the music context. There is no streaming backend; everything ships with the app.
 
 Built with ❤️ and attention to detail.

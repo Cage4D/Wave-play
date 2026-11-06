@@ -2,13 +2,13 @@
   "name": "wave-play",
   "version": "3.0.0",
   "description": "A mini-music player",
-  "homepage": "https://github.com/Cage6D/Wave-play#readme",
+  "homepage": "https://github.com/cage4D/Wave-play#readme",
   "bugs": {
-    "url": "https://github.com/Cage6D/Wave-play/issues"
+    "url": "https://github.com/cage4D/Wave-play/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cage6D/Wave-play.git"
+    "url": "git+https://github.com/cage4D/Wave-play.git"
   },
   "license": "ISC",
   "author": "Cage4D",
